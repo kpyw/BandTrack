@@ -6,6 +6,8 @@ BandTrack::Application.routes.draw do
 
   resources :logs
 
+  post '/steps' => 'steps#create'
+
   root 'pages#start'
   get '/about' => 'pages#about'
 

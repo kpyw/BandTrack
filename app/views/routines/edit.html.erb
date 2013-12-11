@@ -2,5 +2,13 @@
 
 <%= render 'form' %>
 
+<h2>Add exercise to routine</h2>
+  <%= form_tag steps_url, :method => 'post' do %>
+    <%= hidden_field_tag :routine_id, @routine.id %>
+    <%= label_tag :exercise_id %>
+    <%= select_tag :exercise_id, options_from_collection_for_select(Exercise.all, :id, :ex_name) %>
+    <%= submit_tag %>
+  <% end %>
+
 <%= link_to 'Show', @routine %> |
 <%= link_to 'Back', routines_path %>

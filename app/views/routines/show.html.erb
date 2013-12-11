@@ -5,6 +5,10 @@
   <%= @routine.routine_name %>
 </p>
 
+<% @routine.exercises.each do |exercise|%>
+  <%= link_to exercise.ex_name, exercise_url %>
+<% end %>
+
 
  <%= link_to "Add an Exercise", edit_routine_url %>
 

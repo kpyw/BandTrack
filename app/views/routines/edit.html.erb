@@ -1,6 +1,13 @@
-<h1>Editing routine</h1>
+<h1>Editing <%= @routine.routine_name %></h1>
 
-<%= render 'form' %>
+
+
+
+<%= form_tag routine_url(@routine.id), :method => 'patch' do %>
+  <%= label_tag :routine_id %>
+  <%= text_field_tag :routine_id, @routine.routine_name %>
+  <%= submit_tag %>
+  <% end %>
 
 <h2>Add exercise to routine</h2>
   <%= form_tag steps_url, :method => 'post' do %>

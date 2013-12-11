@@ -1,0 +1,37 @@
+<h1>Listing exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ex name</th>
+      <th>Description</th>
+      <th>Tip</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= exercise.ex_name %></td>
+        <td><%= exercise.description %></td>
+        <td><%= exercise.tip %></td>
+        <td><%= exercise.image %></td>
+        <td><%= link_to 'Show', exercise %></td>
+
+        <td><%= link_to 'Add to routine', routines_url %></td>
+         <!-- make add to routine a button with list of routines as dropdown -->
+
+         <!-- add if current user = admin code here -->
+        <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exercise', new_exercise_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ex name:</strong>
+  <%= @exercise.ex_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise.description %>
+</p>
+
+<p>
+  <strong>Tip:</strong>
+  <%= @exercise.tip %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @exercise.image %>
+</p>
+<%= link_to 'Add to routine', routines_url %>
+<br>
+<%= link_to 'Back', exercises_path %>

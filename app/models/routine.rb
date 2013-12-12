@@ -4,5 +4,5 @@ class Routine < ActiveRecord::Base
   has_many :steps, dependent: :destroy
   has_many :exercises, through: :steps
 
-
+  validates :routine_name, presence: true
 end

@@ -9,7 +9,28 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/root">Rainbow strength training</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+<ul class="nav nav-pills">
+  <li class="active"><a href="/routines">My Routines</a></li>
+  <li><a href="/exercises">All Exercises</a></li>
+  <li><a href="/logs">My Log</a></li>
+</ul>
 
 <%= yield %>
 

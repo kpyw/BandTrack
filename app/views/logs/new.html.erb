@@ -4,14 +4,20 @@
 
 <%= link_to 'Back', logs_path %>
 
-
-#use form for?
+# need to pass information from routine if clicked over from there to know which routine is being logged
+#use form for for each exercise, which is a row in a table?
    <%= form_tag logs_url, :method => 'post' do %>
                 <%= hidden_field_tag :exercise_id, @exercise.id %>
                 <%= label_tag :bandcolor %>
                 <%= select_tag :bandcolor, options_from_collection_for_select(Log.all, :id, :bandcolor) %>
                 <%= submit_tag %>
               <% end %>
+<div class = 'row routine'>
+  <div class = 'col-md-3'> Exercise </div>
+  <div class = 'col-md-3'> Band Color </div>
+  <div class = 'col-md-3'> Sets </div>
+  <div class = 'col-md-3'> Reps </div>
+</div>
 
               <div class = 'row'>
   <% @routine.exercises.each do |exercise|%>

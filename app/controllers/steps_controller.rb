@@ -14,4 +14,14 @@ class StepsController < ApplicationController
     redirect_to routine_url(params[:routine_id])
   end
 
+
+  def destroy
+    step = Step.find_by(id: params[:id])
+    step.destroy
+    respond_to do |format|
+      format.html { redirect_to routines_url }
+      format.json { head :no_content }
+    end
+  end
+
 end

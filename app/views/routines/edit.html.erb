@@ -7,6 +7,13 @@
   <%= submit_tag %>
   <% end %>
 
+<div class = 'row'>
+  <% @routine.steps.each do |step|%>
+   <%= link_to step.exercise.image, exercise_url(step.exercise) %>
+    <%= link_to "Delete?", destroy_step_url(step.id), method: :delete %></div>
+  <% end %>
+
+
 <h2>Add exercise</h2>
   <%= form_tag steps_url, :method => 'post' do %>
     <%= hidden_field_tag :routine_id, @routine.id %>

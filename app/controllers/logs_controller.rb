@@ -7,6 +7,7 @@ class LogsController < ApplicationController
   def ensure_user_is_current_user
     unless current_user == @user
       redirect_to :back, alert: "Unauthorized area"
+    end
   end
 
   # GET /logs

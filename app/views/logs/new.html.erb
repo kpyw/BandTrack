@@ -3,3 +3,36 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', logs_path %>
+
+
+#use form for?
+   <%= form_tag logs_url, :method => 'post' do %>
+                <%= hidden_field_tag :exercise_id, @exercise.id %>
+                <%= label_tag :bandcolor %>
+                <%= select_tag :bandcolor, options_from_collection_for_select(Log.all, :id, :bandcolor) %>
+                <%= submit_tag %>
+              <% end %>
+
+              <div class = 'row'>
+  <% @routine.exercises.each do |exercise|%>
+    <div class = 'col-md-3'><%= link_to exercise.ex_name, exercise_url %></div>
+    <div class = 'col-md-3'>
+      <div class = 'btn-grp'>
+        <button type = 'button' class = 'btn btn-default dropdown-toggle' data-toggle='dropdown'>Band color
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>Tan</li>
+          <li>Yellow</li>
+          <li>Red</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Black</li>
+          <li>Silver</li>
+          <li>Gold</li>
+        </ul>
+      </div>
+    </div>
+    <div class = 'col-md-3'> sets </div>
+    <div class = 'col-md-3'> reps </div>
+  <% end %>
+</div>

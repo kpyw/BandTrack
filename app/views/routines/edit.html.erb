@@ -1,8 +1,6 @@
 <h1>Editing <%= @routine.routine_name %></h1>
 
 
-
-
 <%= form_tag routine_url(@routine.id), :method => 'patch' do %>
   <%= label_tag :routine_id %>
   <%= text_field_tag :routine_id, @routine.routine_name %>

@@ -1,33 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<div class = 'jumbotron'>
 <p>
-  <strong>Routine name:</strong>
-  <%= @routine.routine_name %>
+  <h1 class = 'routine-head'><strong>Routine name:</strong>
+  <%= @routine.routine_name %></h1>
+
 </p>
+</div>
 
-<table class='table-bg'>
-  <thead>
-    <tr>
-      <th>Exercise name</th>
-      <th>Band Color</th>
-      <th>Sets</th>
-      <th>Reps</th>
-    </tr>
-  </thead>
+<div class = 'row routine'>
+  <div class = 'col-md-3'> Exercise </div>
 
-  <tbody>
-Exercises
-<% @routine.exercises.each do |exercise|%>
-<tr>
-  <td><%= link_to exercise.ex_name, exercise_url %></td>
-  <td> band color</td>
-  <td> sets</td>
-  <td>reps</td>
-</tr>
-<% end %>
-</tbody>
-</table>
- <%= link_to "Add an Exercise", edit_routine_url %>
+</div>
+<div class = 'row'>
+  <% @routine.exercises.each do |exercise|%>
+    <div class = 'col-md-3'><%= link_to exercise.ex_name, exercise_url %></div>
+
+  <% end %>
+</div>
+
+
+<%= link_to "Add an Exercise", edit_routine_url %>
 
 <br>
 

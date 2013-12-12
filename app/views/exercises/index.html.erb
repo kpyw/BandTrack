@@ -22,9 +22,14 @@
         <td><%= exercise.image %></td>
         <td><%= link_to 'Show', exercise %></td>
 
-        <td><%= link_to 'Add to routine', routines_url %></td>
-         <!-- make add to routine a button with list of routines as dropdown -->
-
+        <td>
+        <%= form_tag steps_url, :method => 'post' do %>
+           <%= hidden_field_tag :exercise_id, exercise.id %>
+            <%= label_tag 'Add to routine' %>
+            <%= select_tag :routine_id, options_from_collection_for_select(Routine.all, :id, :routine_name) %>
+          <%= submit_tag 'Save to routine'%>
+          <% end %>
+          </td>
          <!-- add if current user = admin code here -->
         <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -5,11 +5,28 @@
   <%= @routine.routine_name %>
 </p>
 
+<table class='table-bg'>
+  <thead>
+    <tr>
+      <th>Exercise name</th>
+      <th>Band Color</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+
+  <tbody>
+Exercises
 <% @routine.exercises.each do |exercise|%>
-  <%= link_to exercise.ex_name, exercise_url %>
+<tr>
+  <td><%= link_to exercise.ex_name, exercise_url %></td>
+  <td> band color</td>
+  <td> sets</td>
+  <td>reps</td>
+</tr>
 <% end %>
-
-
+</tbody>
+</table>
  <%= link_to "Add an Exercise", edit_routine_url %>
 
 <br>

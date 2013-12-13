@@ -1,13 +1,13 @@
 <h1>Listing logs</h1>
-
+<!-- each routine should click open with javascript and show the exercises and ability to log -->
 <table>
   <thead>
     <tr>
+      <th>Routine</th>
+      <th>Exercise</th>
       <th>Sets</th>
       <th>Reps</th>
-      <th>User</th>
-      <th>Exercise</th>
-      <th></th>
+
       <th></th>
       <th></th>
     </tr>
@@ -16,10 +16,10 @@
   <tbody>
     <% @logs.each do |log| %>
       <tr>
+        <td><%= log.exercise_id %></td>
         <td><%= log.sets %></td>
         <td><%= log.reps %></td>
-        <td><%= log.user_id %></td>
-        <td><%= log.exercise_id %></td>
+
         <td><%= link_to 'Show', log %></td>
         <td><%= link_to 'Edit', edit_log_path(log) %></td>
         <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>

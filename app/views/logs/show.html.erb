@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Routine:</strong>
+  <%= @log.routine_id %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @log.exercise_id %>
+</p>
+
+<p>
   <strong>Sets:</strong>
   <%= @log.sets %>
 </p>
@@ -10,15 +20,6 @@
   <%= @log.reps %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @log.user_id %>
-</p>
-
-<p>
-  <strong>Exercise:</strong>
-  <%= @log.exercise_id %>
-</p>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
 <%= link_to 'Back', logs_path %>

@@ -1,4 +1,4 @@
-<h1>Listing routines</h1>
+<h1><%= current_user.email %> routines</h1>
 
 <div class="panel panel-primary">
   <div class="panel-heading">
@@ -9,19 +9,17 @@
   </div>
 </div>
 
-
-    <% @routines.each do |routine| %>
-     <div class "panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= link_to routine.routine_name, routine %></h3>
-      </div>
-      <div class="panel-body">
+   <% @routines.each do |routine| %>
+<div class "panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title"><%= link_to routine.routine_name, routine %></h3>
+  </div>
+  <div class="panel-body">
         <%= link_to 'Edit Routine', edit_routine_path(routine) %> | <%= link_to 'Delete routine', routine, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+  </div>
+</div>
         <% end %>
-      </div>
-
 
 <br>
 
-<%= link_to 'New Routine', new_routine_path %>
+<h4><%= link_to 'Create a New Routine', new_routine_path %></h4>
